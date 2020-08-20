@@ -2,40 +2,76 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css">
-    <title>가치해요</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css">
+  <title>가치해요</title>
 </head>
 
 <!--class : css와 같은 서식 / id : js이용시 사용-->
+
 <body>
-    <!--네비게이션-->
-    <div class="menu">
-        <input type="checkbox" id="toggle">
-        <label for="toggle" class="btn">&equiv;</label>
-        <label for="toggle" class="closer"></label>
-        <img src="img/brandLogo.png" class="brandLogo">
-        <div class="offcanvas">
-          <h1></h1>
-          <ul>
-            <li>
-              <a href="#">HOME</a>
-            </li>
-            <li>
-              <a href="#loginPage.html">LOGIN</a>
-            </li>
-            <li>
-              <a href="#">MY MENU</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    
-    <!--소개-->
-    <div class="introduce">
-        <h1>가치해요</h1>
-        <a>모집부터 관리까지한번에</a>
+  <!--네비게이션-->
+  <div class="menu">
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="btn">&equiv;</label>
+    <label for="toggle" class="closer"></label>
+    <img src="img/brandLogo.png" class="brandLogo">
+    <div class="offcanvas">
+      <h1></h1>
+      <ul>
+        <li>
+          <a href="#">HOME</a>
+        </li>
+        <li>
+          <a href="#loginPage.html">LOGIN</a>
+        </li>
+        <li>
+          <a href="#">MY MENU</a>
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <!--소개-->
+  <section class="introduce">
+    <div class="inner">
+      <h1>가치해요</h1>
+      <p>당신의 가치를 함께</p>
+    </div>
+  </section>
+
+  <!--게시판-->
+  <div class="bullentboard">
+    <div class="leftBoard">  <!--왼쪽 영역-->
+
+      <div class="profileBoard">
+        <img src="img/profileImg128.png" class="profile">
+        <p class="profileName">배한조</p>
+        <table>
+          <tr>
+            <td><button class="profileButton">내 정보</button></td>
+            <td><button class="profileButton">로그아웃</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="myMenu">
+        <p class="myTeam"><img src="img/group.png"> 나의 그룹</p>
+        <p class="myPlan"><img src="img/schedule.png">스케쥴</p>
+      </div>
+
+    </div>
+
+    <div class="rightBoard">  <!--오른쪽 영역-->
+      <p>오른쪽 영역입니다.</p>
+    </div>
+
+    <div class="centerBoard">  <!--가운데 영역-->
+      <p>센터보드 영역입니다.</p>
+    </div>
+
+  </div>
+
 </body>
 
 <script src=""></script>
