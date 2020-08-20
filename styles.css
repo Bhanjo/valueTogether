@@ -189,7 +189,6 @@ body {
 .profileBoard {
     padding-top: 1rem;
     text-align: center;
-    background-color: #f5f5f5;
     display: block;
     
     padding: 10px 10px 10px 10px;
@@ -198,7 +197,6 @@ body {
     margin-left: 11px;
     padding: 3px 10px 5px 10px;
     text-align: center;
-    background-color: #f5f5f5;
     
     border-radius: 5px;
     
@@ -217,15 +215,14 @@ body {
 .myPlan {
     
 }
-.myTeam:hover, .myPlan:hover {
-    background-color: #ebebeb;
-}
 .myTeam, .myPlan {
     font-size: 16px;
     padding: 8px 8px 8px 8px;
-    background-color: #f5f5f5;
     border: 1px solid;
     border-color: #d3d3d3;
+}
+.myTeam, .myPlan, .profileButton, .profileBoard {
+    background-color: #fafafa;
 }
 
 .centerBoard {
@@ -251,8 +248,8 @@ body {
 .postList {
     height: 36px;
 }
-.postList:hover {
-    background-color: #f3f3f3;
+.postList:hover, .myTeam:hover, .myPlan:hover {
+    background-color: #f5f5f5;
 }
 .postName, .postList {
     padding: 7px 0rem 7px 1rem;
