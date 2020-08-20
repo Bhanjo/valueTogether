@@ -161,6 +161,11 @@ body {
 }
 
 /*게시판 영역*/
+.profileBoard, .profileButton, .card, .rightBoard {
+    border: thick solid;
+    border-width: 1px;
+    border-color: #d3d3d3;
+}
 .bullentboard {
     overflow: hidden;
     margin:1rem auto 1rem auto;
@@ -186,9 +191,7 @@ body {
     text-align: center;
     background-color: #f5f5f5;
     display: block;
-    border: thick solid;
-    border-width: 1px;
-    border-color: #d3d3d3;
+    
     padding: 10px 10px 10px 10px;
 }
 .profileButton {
@@ -196,12 +199,9 @@ body {
     padding: 3px 10px 5px 10px;
     text-align: center;
     background-color: #f5f5f5;
-    border-color: #d3d3d3;
+    
     border-radius: 5px;
-    border-width: 1px;
-}
-.profileButton, .myTeam, .myPlan {
-    cursor: pointer;
+    
 }
 .profileName {
     font-size: 19px;
@@ -239,22 +239,20 @@ body {
     margin: 0px 7px 7px 0px;
     width: 600px;
     height: 300px;
-    border: thick solid;
+    
     border-width: 1px 1px 1px 1px;
-    border-color: #d3d3d3;
+    
 }
 .postName {
     font-weight: bolder;
     color: #00ce43;
     text-shadow: 0px 0px 1px;
-    cursor: pointer;
 }
 .postList {
     height: 36px;
 }
 .postList:hover {
     background-color: #f3f3f3;
-    cursor: pointer;
 }
 .postName, .postList {
     padding: 7px 0rem 7px 1rem;
@@ -263,14 +261,15 @@ body {
     border-width: 1px;
     border-color: #d3d3d3;
 }
-
 .rightBoard {
     float: right;
     margin-right: auto;
     position: relative;
-    border: thick solid;
-    border-width: 1px;
-    border-color: #d3d3d3;
+    
     width: 410px;
     height: auto;
+}
+
+.profileButton, .myTeam, .myPlan, .postName, .postList:hover {
+    cursor: pointer;
 }
