@@ -275,11 +275,11 @@ body {
 로그인페이지 스타일
 */
 .loginFrame {
-    margin:10rem 20rem 10rem 20rem;
+
 }
 .loginBox {
-    margin:auto;
-    display: flex;
+    margin:5rem auto 5rem auto;
+    display: block;
     width: 600px;
     height: 400px;
     background-color: #00ce43;
