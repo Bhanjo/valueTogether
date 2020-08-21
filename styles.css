@@ -1,3 +1,9 @@
+/*
+메인페이지 스타일입니다.
+로고 코드 #00ce43
+테두리 코드 #d3d3d3
+*/
+
 /* 기본설정 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -14,11 +20,6 @@ body, input, select, textarea {
     font-size:1rem;
     line-height: 1.50;
 }
-
-/*
-로고 코드 #00ce43
-테두리 코드 #d3d3d3
-*/
 
 body {
     background-color: #ffffff;
@@ -265,6 +266,49 @@ body {
     width: 400px;
 }
 
-.profileButton, .myTeam, .myPlan, .postName, .postList:hover {
+.profileButton, .myTeam, .myPlan, .postName, .postList:hover, .brandLogo {
     cursor: pointer;
+}
+
+
+/*
+로그인페이지 스타일
+*/
+.loginFrame {
+    margin:10rem 20rem 10rem 20rem;
+}
+.loginBox {
+    margin:auto;
+    display: flex;
+    width: 600px;
+    height: 400px;
+    background-color: #00ce43;
+    border: thick solid;
+    border-color: #01c542;
+    border-width: 2px;
+}
+.loginSection {
+    display: block;
+    padding: 5rem 2rem 2rem 2rem;
+}
+.loginList {
+    float:center;
+    list-style-type: none;
+}
+.inputLogin {
+    font-size: 30px;
+    margin-bottom: 1rem;
+    width: 500px;
+}
+.enterLogin {
+    margin-top: 1rem;
+    font-size: 30px;
+    color: inherit;
+    float: left;
+}
+.inputLogin, .enterLogin {
+    background-color: inherit;
+    border: thick solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #ffffff;
 }
