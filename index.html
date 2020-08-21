@@ -7,7 +7,7 @@
   <title>가치해요</title>
 </head>
 
-<!--class : css와 같은 서식 / id : js이용시 사용-->
+<!--class : css와 같은 서식 / id : js이용시 js~ 사용-->
 
 <body>
   <div class="frame">
@@ -16,12 +16,12 @@
       <input type="checkbox" id="toggle">
       <label for="toggle" class="btn">&equiv;</label>
       <label for="toggle" class="closer"></label>
-      <img src="img/brandLogo.png" class="brandLogo">
+      <img src="img/brandLogo.png" class="brandLogo" id="jsGoHome">
       <div class="offcanvas">
         <h1></h1>
         <ul>
           <li>
-            <a href="#">HOME</a>
+            <a href="#" id="jsGoHome">HOME</a>
           </li>
           <li>
             <a href="#" id="clickLogin">로그인</a>
@@ -69,7 +69,14 @@
 
       <div class="rightBoard">
         <!--오른쪽 영역-->
-        <p>오른쪽 영역입니다.</p>
+        
+        <form class="search">
+          <input class="searchpost"type="text" placeholder="찾을내용을 입력하세요."/>
+        </form>
+
+        <div class="viewSchedule">
+          <p class="postName">오늘의 일정</p>
+        </div>
       </div>
 
       <div class="centerBoard">

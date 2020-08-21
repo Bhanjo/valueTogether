@@ -161,14 +161,14 @@ body {
 }
 
 /*게시판 영역*/
-.profileBoard, .profileButton, .card, .rightBoard {
+.profileBoard, .profileButton, .card{
     border: thick solid;
     border-width: 1px;
     border-color: #d3d3d3;
 }
 .bullentboard {
     overflow: hidden;
-    margin:1rem auto 1rem auto;
+    margin:1rem auto auto auto;
     max-width: 1260px;
     min-width: 1260px;
 }
@@ -179,7 +179,6 @@ body {
 .leftBoard {
     position: relative;
     float: left;
-    height: auto;
     width: 200px;
 }
 .profile {
@@ -229,14 +228,12 @@ body {
     /*border: thick solid;
     border-width: 1px;
     border-color: red;*/
-    height: 920px;
     width: auto; /*610px*/
 }
 .card {
-    margin: 0px 7px 7px 0px;
+    margin: 0px 7px 12px 0px;
     width: 600px;
     height: 300px;
-    
     border-width: 1px 1px 1px 1px;
     
 }
@@ -262,9 +259,10 @@ body {
     float: right;
     margin-right: auto;
     position: relative;
-    
     width: 410px;
-    height: auto;
+}
+.search .searchpost {
+    width: 400px;
 }
 
 .profileButton, .myTeam, .myPlan, .postName, .postList:hover {
