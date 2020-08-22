@@ -10,14 +10,37 @@
 
 <body>
     <div class="loginFrame">
+        <div class="menu">
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="btn">&equiv;</label>
+            <label for="toggle" class="closer"></label>
+            <img src="img/brandLogo.png" class="brandLogo" id="jsGoHome" href="index.html">
+            <div class="offcanvas">
+                <h1></h1>
+                <ul>
+                    <li>
+                        <a href="index.html" id="jsGoHome">HOME</a>
+                    </li>
+                    <li>
+                        <a href="loginPage.html">로그인</a>
+                    </li>
+                    <li>
+                        <a href="group.html">나의 그룹</a>
+                    </li>
+                    <li>
+                        <a href="schedule.html">일정표</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="loginBox">
             <div class="loginSection">
-                <h1>GACHI</h1>
                 <ul class="loginList">
+                    <li><img src="img/brandLogoWhite.png" class="LoginBandLogo"></li>
                     <li><input class="inputLogin" type="text" placeholder="아이디" /></li>
                     <li><input class="inputLogin" type="text" placeholder="비밀번호" /></li>
+                    <li><button class="enterLogin">로그인</button></li>
                 </ul>
-                <button class="enterLogin">로그인</button>
             </div>
         </div>
     </div>

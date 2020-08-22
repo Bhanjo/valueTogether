@@ -45,6 +45,10 @@ body {
     width: 130px;
     height: 50px;
 }
+.LoginBandLogo {
+    width: 45%;
+    height: 45%;
+}
 #toggle {
     display:none;
 }
@@ -275,40 +279,50 @@ body {
 로그인페이지 스타일
 */
 .loginFrame {
-
+    width: 100%;
+    height: 100%;
 }
 .loginBox {
-    margin:5rem auto 5rem auto;
-    display: block;
+}
+.loginSection {
     width: 600px;
     height: 400px;
     background-color: #00ce43;
     border: thick solid;
     border-color: #01c542;
     border-width: 2px;
-}
-.loginSection {
-    display: block;
-    padding: 5rem 2rem 2rem 2rem;
+    border-radius: 3rem;
 }
 .loginList {
     float:center;
     list-style-type: none;
 }
+.loginSection, .loginList { /*div중앙정렬*/
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .inputLogin {
-    font-size: 30px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     width: 500px;
+    color: #ffffff;
+}
+.inputLogin:focus, .enterLogin:focus {
+    outline: none;
 }
 .enterLogin {
-    margin-top: 1rem;
-    font-size: 30px;
-    color: inherit;
-    float: left;
+    color: #ffffff;
+    float: right;
+}
+.enterLogin:hover {
+    color: #8b8b8b;
+    cursor: pointer;
 }
 .inputLogin, .enterLogin {
     background-color: inherit;
     border: thick solid;
     border-width: 0px 0px 1px 0px;
     border-color: #ffffff;
+    font-size: 30px;
 }
