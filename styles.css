@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
 /*
 메인페이지 스타일입니다.
 로고 코드 #00ce43
@@ -15,13 +16,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 body, input, select, textarea {
-    font-family: 맑은고딕, Malgun Gothic, dotumArial, Helvetica, sans-serif;
+    font-family: dotumArial, Helvetica, sans-serif;
     font-weight: 400;
     font-size:1rem;
     line-height: 1.50;
 }
 
 body {
+    font-family: 'Nanum Gothic', sans-serif;
     background-color: #ffffff;
     color: #444444;
     -webkit-text-size-adjust: none;
@@ -147,10 +149,6 @@ body {
     padding: 10rem 4rem 8rem 4rem;
     background-color: #02c543;
 }
-
-.inner {
-    
-}
 .inner h1 {
     text-align : left;
     font-size: 50px;
@@ -172,10 +170,11 @@ body {
     border-color: #d3d3d3;
 }
 .bullentboard {
+    position: relative;
+    display: block;
     overflow: hidden;
     margin:1rem auto auto auto;
-    max-width: 1260px;
-    min-width: 1260px;
+    min-width: 1000px;
 }
 .leftBoard, .centerBoard {
     margin: 0 1rem 0 1rem;
