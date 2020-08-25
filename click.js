@@ -1,14 +1,9 @@
-const logo = document.getElementById(".jsGoHoem");
-
-/*function myHome() { //로고클릭 이벤트 처리
-    const openHome = location.href("index.html");
+//로고클릭 이벤트
+function myHome() { //로고클릭 이벤트 처리
+    location.href="index.html";
 }
 
-function clickLogo() { //로고클릭 이벤트
-    logo.addEventListener("click", myHome);
-}*/
-
-function init() {
-    clickLogo();
+//회원가입클릭 이벤트
+function signUpPage() {
+    location.href="signUp.html";
 }
-init();

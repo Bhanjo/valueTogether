@@ -307,18 +307,22 @@ body {
     width: 500px;
     color: #ffffff;
 }
-.inputLogin:focus, .enterLogin:focus {
+.inputLogin:focus, .enterLogin:focus, .signUp:focus {
     outline: none;
 }
 .enterLogin {
     color: #ffffff;
     float: right;
 }
-.enterLogin:hover {
+.signUp {
+    color: #ffffff;
+    float: left;
+}
+.enterLogin:hover, .signUp:hover {
     color: #8b8b8b;
     cursor: pointer;
 }
-.inputLogin, .enterLogin {
+.inputLogin, .enterLogin, .signUp {
     background-color: inherit;
     border: thick solid;
     border-width: 0px 0px 1px 0px;
