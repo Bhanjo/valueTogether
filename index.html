@@ -8,6 +8,7 @@
 </head>
 
 <!--class : css와 같은 서식 / id : js이용시 js~ 사용-->
+
 <body>
   <div class="frame">
     <!--네비게이션-->
@@ -26,10 +27,7 @@
             <a href="loginPage.html">로그인</a>
           </li>
           <li>
-            <a href="loginPage.html">스터디모집</a>
-          </li>
-          <li>
-            <a href="loginPage.html">동호회모집</a>
+            <a href="recruitPage.html">그룹 모집</a>
           </li>
           <li>
             <a href="group.html">나의 그룹</a>
@@ -53,43 +51,56 @@
     <div class="bullentboard">
 
       <div class="searchBox">
-        <input type="text" placeholder="내용을 입력하세요" class="searchInput"/>
+        <input type="text" placeholder="내용을 입력하세요" class="searchInput" />
       </div>
 
       <div class="postBox">
         <h1>모집중인 그룹</h1>
+        <a id="seeMore" onclick="goRecuitPage()">더보기</a>
         <div class="postCard">
           <ul>
-
             <li class="card">
-              <img src="img/millky.jpg" class="cardImg"><p>제목입니다</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor1"></div>
+              <p>제목입니다.</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/ex.PNG" class="cardImg"><p>제목입니다2.</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor2"></div>
+              <p>제목입니다2.</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/cat.jpg" class="cardImg"><p>제목입니다2.</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor3"></div>
+              <p>제목입니다3</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/profileImg128.png" class="cardImg"><p>제목입니다2.</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor4"></div>
+              <p>제목입니다4</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/basicPhoto128.png" class="cardImg"><p>제목입니다2.</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor5"></div>
+              <p>제목입니다5</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/basicPhoto128.png" class="cardImg"><p>제목입니다2.</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor6"></div>
+              <p>제목입니다6</p><a>해시태그</a>
             </li>
             <li class="card">
-              <img src="img/basicPhoto128.png" class="cardImg"><p>제목입니다8</p><a>해시태그</a>
+              <div class="cardDeco" id="paintCardColor7"></div>
+              <p>제목입니다7</p><a>해시태그</a>
             </li>
-
+            <li class="card">
+              <div class="cardDeco" id="paintCardColor8"></div>
+              <p>제목입니다8</p><a>해시태그</a>
+            </li>
           </ul>
         </div>
+
       </div>
 
     </div>
   </div>
 
-  
+  <script src="click.js"></script>
+  <script src="randomCardColor.js"></script>
 </body>
+
 </html>
