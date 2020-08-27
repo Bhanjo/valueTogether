@@ -46,10 +46,8 @@ body {
 }
 
 .brandLogo {
-    padding: 2px 5px;
-    padding-left: 20px;
-    width: 130px;
-    height: 50px;
+    padding: 0 5px 5px 20px;
+    width: 10%;
 }
 .brandLogo:hover {
     cursor: pointer;
