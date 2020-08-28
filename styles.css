@@ -14,10 +14,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
     vertical-align: baseline;
 }
-img {
-    width: 100%;
-    height: auto;
-}
+
 
 body, input, select, textarea {
     font-family: dotumArial, Helvetica, sans-serif;
@@ -47,7 +44,7 @@ body {
 
 .brandLogo {
     padding: 0 5px 5px 20px;
-    width: 10%;
+    width: 120px;
 }
 .brandLogo:hover {
     cursor: pointer;
@@ -321,4 +318,47 @@ body {
     border-width: 0px 0px 1px 0px;
     border-color: #ffffff;
     font-size: 30px;
+}
+
+/*
+    그룹모집 게시판
+*/
+.mainBox {
+    position: absolute;
+    margin: 4rem auto;
+    width: 100%;
+}
+.postInner {
+    position: relative;
+    display: flex-block;
+    list-style-type: none;
+    width: 45%;
+    margin: 0 auto 0.2rem auto;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    padding-bottom: 0.5em;
+}
+.postInner:hover {
+    background-color: #e6e6e6;
+}
+.postInner h3 {
+    font-size: 1.2em;
+    width: 100%;
+}
+.postInner p {
+    font-size: 1em;
+}
+.postInner p, .postInner h3 {
+    margin: 0.5em auto 0.5em 1em;
+}
+.goodButton {
+    position: relative;
+    margin: 0.5em auto 0 1em;
+    width: 20px;
+}
+.countGood {
+    position: relative;
+    display: inline;
+    font-size: 1em;
+    color: rgb(230, 114, 114);
 }
