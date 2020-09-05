@@ -1,3 +1,14 @@
+<?php
+  // include 'db_info.php';
+
+  // //세션에 userid가 없으면 로그인페이지로 바로 이동
+  // session_start();
+  // if(!isset($_SESSION['userid'])) {
+  //   echo "로그인 후 이용해주세요!";
+  //   header('location: loginPage.php');
+  // }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,7 +38,7 @@
             <a href="loginPage.html">로그인</a>
           </li>
           <li>
-            <a href="recruitPage.html">그룹 모집</a>
+            <a href="recruitPage.php">그룹 모집</a>
           </li>
           <li>
             <a href="group.html">나의 그룹</a>
