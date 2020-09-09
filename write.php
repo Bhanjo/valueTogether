@@ -2,6 +2,13 @@
 include 'db_info.php';
 session_start();
 
+//세션에 userid가 없으면 로그인페이지로 바로 이동
+if (!isset($_SESSION['userid'])) {
+    $message = "로그인을 해주세요.";
+    echo "<script type='text/javascript'>alert('$message')</script>";
+    header('location: loginPage.php');
+}
+
 //올바르지 않는 경로로 접근시
 // if (!isset($_SERVER['HTTP_REPERER'])) {
 //     die('Direct Access Not Allowed');
@@ -18,37 +25,31 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stles.css">
+    <link rel="stylesheet" href="styles.css?after">
 </head>
 
 <body>
+    <?php
+    include 'header.php';
+    ?>
     <form action="write_check.php" method="POST">
-        <table id="one">
-            <tr>
-                <td height="20">Write</td>
-            </tr>
-            <table id="two">
-                <tr>
-                    <td>NAME:</td>
-                    <td><input type="text" name="writer" value="작성자이름"></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type="password" name="password" value="비밀번호"></td>
-                </tr>
-                <tr>
-                    <td>Title: </td>
-                    <td><input type="text" name="title" value="제목"></td>
-                </tr>
-                <tr>
-                    <td>Article:</td>
-                    <td><textarea name="content" rows="30" cols="80"></textarea></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="POST"></td>
-                </tr>
+        <div class="one">
+            <table class="two">
+                <div class="postTop">
+                    <?php
+                    echo "<a class='writeName'>From : {$_SESSION['userName']}
+                    <input type='password' name='password' class='writePwd' value='0000'>
+                    <input type='submit' class='sendPost' value='POST'>
+                    </a>"
+                    ?>
+                </div>
+                <div class="postBody">
+                    <input type="text" name="title" class="writeTitle" placeholder="제목">
+                    <textarea class="writearea" name="content" rows="10" placeholder="내용"></textarea>
+                </div>
             </table>
-        </table>
+        </div>
+        
     </form>
 </body>
 

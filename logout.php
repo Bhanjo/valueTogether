@@ -11,6 +11,8 @@
         header("location: index.php");
         exit();
     } else {
-        echo "error!";
+        $message = "이미 로그아웃되었습니다.";
+        echo "<script type='text/javascript'>alert('$message')</script>";
+        echo "<script type='text/javascript'>window.location.href='index.php'</script>";
     }
 ?>

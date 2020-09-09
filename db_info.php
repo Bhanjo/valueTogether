@@ -7,5 +7,4 @@
     $mysql_charset = 'UTF-8';
 
     $mysqli = new mysqli($mysql_hostname, $mysql_username, $mysql_password, $mysql_database, $mysql_port, $mysql_charset);
-    //$mysqli = new mysqli($mysql_hostname, $mysql_username, $mysql_password, $mysql_database, $mysql_charset);
 ?>

@@ -21,21 +21,24 @@
         // 2는 MYSQLI_ASSOC 문자 반환 3은 MYSQLI_BOTH 둘 다 반환
         if($row['password'] == $password) { //비밀번호 같을시
             $_SESSION['userid'] = $id; //세션 유저에  $id저장
-            if(isset($_SESSION['userid'])) { //세션에 성공적으로 세팅시
+            $_SESSION['userName'] = $row['u_name'];
+            if(isset($_SESSION['userid']) || isset($_SESSION['userName']) ) { //세션에 성공적으로 세팅시
                 echo "성공적으로 로그인되었습니다.";
                 header("location: index.php");
             } else {
-                echo "로그인에 실패했습니다.";
-                header("Location: loginPage.php");
+                $message = "로그인에 실패했습니다..";
+                echo "<script type='text/javascript'>alert('$message')</script>";
+                header("location: loginPage.php");
             }
         }
         else { //패스워드 오류
-            echo "패스워드를 잘못입력했습니다.";
-            header("Location: loginPage.php");
+            $message = "패스워드를 잘못입력했습니다.";
+            echo "<script type='text/javascript'>alert('$message')</script>";
+            header("location: loginPage.php");
         }
     }
     else {
-        echo "패스워드 혹은 아이디를 잘못입력했습니다.";
-        header("Location: loginPage.php");
+        $message = "패스워드 혹은 아이디를 잘못입력했습니다.";
+        echo "<script type='text/javascript'>alert('$message')</script>";
+        header("location: loginPage.php");
     }
-?>

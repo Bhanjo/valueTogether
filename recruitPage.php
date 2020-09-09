@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?after">
     <title>가치해요</title>
 </head>
 
@@ -38,40 +38,19 @@
     $query = "SELECT * FROM board ORDER BY  `index` desc LIMIT $limit OFFSET $offset";
     $result = $mysqli->query($query);
     ?>
+
     <div class="frame">
         <!--네비게이션-->
-        <div class="menu">
-            <input type="checkbox" id="toggle">
-            <label for="toggle" class="btn">&equiv;</label>
-            <label for="toggle" class="closer"></label>
-            <img src="img/logo128.png" class="brandLogo" onclick="myHome()">
-            <div class="offcanvas">
-                <h1></h1>
-                <ul>
-                    <li>
-                        <a href="index.html">HOME</a>
-                    </li>
-                    <li>
-                        <a href="loginPage.html">로그인</a>
-                    </li>
-                    <li>
-                        <a href="recruitPage.html">그룹 모집</a>
-                    </li>
-                    <li>
-                        <a href="group.html">나의 그룹</a>
-                    </li>
-                    <li>
-                        <a href="schedule.html">일정표</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php
+        include 'header.php';
+        ?>
 
         <div class="mainBox">
             <div class="searchBox">
                 <input type="text" placeholder="내용을 입력하세요" class="searchInput" />
+                <div class="writePost"><a href="write.php">글쓰기</a></div>
             </div>
-            >
+
             <div class="postList">
                 <ul>
                     <!-- DB전체 게시물을 가져와 출력 -->
@@ -79,62 +58,79 @@
                     while ($row = $result->fetch_assoc()) {
                     ?>
                         <li class="postInner">
-                            <p><?php echo $row['index'] ?></p>
-                            <h3><?php echo $row['Title'] ?></h3>
-                            <p><?php echo $row['writer'] ?></p>
+                            <ul class="postHead">
+                                <li class="postHeadInner">
+                                    <p class="postNum">#<?php echo $row['index'] ?></p>
+                                </li>
+                                <li class="postHeadInner">
+                                    <h3><?php echo $row['Title'] ?></h3>
+                                </li>
+                            </ul>
+
+                            <ul class="postInfo">
+                                <li class="postInfoInner">
+                                    <h3 class="postWriter"><?php echo $row['writer'] ?></h3>
+                                </li>
+                                <li class="postInfoInner">
+                                    <P><?php
+                                        $postTime = strtotime($row['POST_DATE']);
+                                        echo date('y.m.d(H:i)', $postTime) ?></P>
+                                </li>
+                            </ul>
                             <p><?php echo $row['content'] ?></p>
-                            <P><?php echo $row['POST_DATE'] ?></P>
-                            <p><?php echo $row['View_count'] ?></p>
+                            <p><?php //echo $row['View_count']
+                                ?></p>
                         </li>
                     <?php
                     };
                     ?>
                 </ul>
+
+                <!-- 페이징 -->
+                <div>
+                    <ul class="paging">
+                        <?php
+                        $total_block = ceil($total_page / $one); //전체블록 갯수
+
+                        //블록의 위치에따라 불러오는 포스팅 시작점 결정
+                        $start_page = ($current_block * $one) - ($one - 1);
+                        if ($current_block == $total_block) {
+                            $last_page = $total_page;
+                        } else {
+                            $last_page = $current_block * $one;
+                        }
+
+                        //블록 이동
+                        $next_block = $last_page + 1;
+                        if ($next_block > $total_page) $next_block = $total_page;
+                        $previous_block = $start_page - 1 < 1 ? 1 : $start_page - 1;
+
+
+                        //첫페이지로 이동
+                        if ($current_page != 1) {
+                            echo "<li><a href='recruitPage.php?current_page=1'> [ << ] </a></li>";
+                            echo "<li><a href='recruitPage.php?current_page=$previous_block'> [ < ] </a></li>";
+                        }
+                        //페이지 블록 표시
+                        for ($i = $start_page; $i <= $last_page; $i++) {
+                            if ($i > $total_page) break;
+                            if ($i == $current_page) echo "<li> [Now] </li>";
+                            else {
+                                echo "<li><a href='recruitPage.php?current_page=$i'> [ $i ] </a></li>";
+                            }
+                        }
+
+                        //이전페이지 이동
+                        if ($current_page != $total_page) {
+                            echo "<li><a href='recruitPage.php?current_page=$next_block'> [ > ] </a></li>";
+                            echo "<li><a href='recruitPage.php?current_page=$total_page'> [ >> ] </a></li>";
+                        }
+                        ?>
+                    </ul>
+                </div>
+
             </div>
 
-        </div>
-
-        <!-- 페이징 -->
-        <div>
-            <ul class="paging">
-                <?php
-                $total_block = ceil($total_page / $one); //전체블록 갯수
-                
-                //블록의 위치에따라 불러오는 포스팅 시작점 결정
-                $start_page = ($current_block * $one) - ($one - 1);
-                if ($current_block == $total_block) {
-                    $last_page = $total_page;
-                } else {
-                    $last_page = $current_block * $one;
-                }
-
-                //블록 이동
-                $next_block = $last_page + 1;
-                if ($next_block > $total_page) $next_block = $total_page;
-                $previous_block = $start_page - 1 < 1 ? 1 : $start_page - 1;
-
-
-                //첫페이지로 이동
-                if ($current_page != 1) {
-                    echo "<li><a href='recruitPage.php?current_page=$previous_block'> [ < ] </a></li>";
-                    echo "<li><a href='recruitPage.php?current_page=1'> [ << ] </a></li>";
-                }
-                //페이지 블록 표시
-                for ($i = $start_page; $i <= $last_page; $i++) {
-                    if ($i > $total_page) break;
-                    if ($i == $current_page) echo "<li> [Current Page] </li>";
-                    else {
-                        echo "<li><a href='recruitPage.php?current_page=$i'> [ $i ] </a></li>";
-                    }
-                }
-
-               //이전페이지 이동
-                if ($current_page != $total_page) {
-                    echo "<li><a href='recruitPage.php?current_page=$next_block'> [ > ] </a></li>";
-                    echo "<li><a href='recruitPage.php?current_page=$total_page'> [ >> ] </a></li>";
-                }
-                ?>
-            </ul>
         </div>
 
     </div>
