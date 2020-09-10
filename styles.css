@@ -371,11 +371,14 @@ body {
 .postInner:hover {
     background-color: #e6e6e6;
 }
-.postInner p{
-    color: #9e9e9e;
-}
 .postInner p, .postInner h3{
     margin-bottom:0.2em;
+}
+.postNum {
+    color: #9e9e9e;
+}
+.postContent {
+    color : #4b4b4b;
 }
 .postHead {
     display: flex;
@@ -432,6 +435,14 @@ body {
     width: 100%;
     margin: 0 auto 0 auto;
     text-decoration: none;
+}
+.postDelete {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+}
+.deleteBtn {
+
 }
 /* 게시물 작성 */
 .one {

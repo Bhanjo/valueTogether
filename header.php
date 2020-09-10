@@ -31,7 +31,7 @@ include 'db_info.php';
                 <a href="group.html">나의 그룹</a>
             </li>
             <li>
-                <a href="schedule.html">일정표</a>
+                <a href="calendar.php">일정표</a>
             </li>
         </ul>
     </div>

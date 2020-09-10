@@ -18,7 +18,7 @@
         exit();
     }
 
-    $query = "INSERT INTO board (writer, Title, content, password, View_Count) VALUES('$writer', '$title', '$content', '$password', 0)";
+    $query = "INSERT INTO board (`index`, writer, Title, content, password, View_Count) VALUES(`index`, '$writer', '$title', '$content', '$password', 0)";
     $execute = $mysqli->query($query);
     if($execute) {
         $message = "성공적으로 포스팅했습니다";
