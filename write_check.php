@@ -8,17 +8,17 @@
 
     // $writer = $_SESSION['userid'];
     $writer = $_SESSION['userName'];
-    $password = $_POST['password'];
+    //$password = $_POST['password']; !패스워드기능 삭제!
     $title = $_POST['title'];
     $content = $_POST['content'];
 
-    if($writer == NULL || $password == NULL || $title == NULL || $content == NULL) {
+    if($writer == NULL || $title == NULL || $content == NULL) {
         echo "미입력한 부분이 있습니다.<br>";
         echo "<a href=write.php>페이지되돌아가기</a>";
         exit();
     }
 
-    $query = "INSERT INTO board (`index`, writer, Title, content, password, View_Count) VALUES(`index`, '$writer', '$title', '$content', '$password', 0)";
+    $query = "INSERT INTO board (`index`, writer, Title, content, password, View_Count) VALUES(`index`, '$writer', '$title', '$content', 0000, 0)";
     $execute = $mysqli->query($query);
     if($execute) {
         $message = "성공적으로 포스팅했습니다";

@@ -41,7 +41,6 @@ body {
     position: fixed;
     z-index: 1;
 }
-
 .menuContainer {
     width: 100%;
     display: flex;
@@ -53,7 +52,7 @@ body {
 }
 .logoutContainer {
     display: flex;
-    margin: auto 2rem auto auto;
+    margin: 0 2rem 0 auto;
 }
 #logoutBox {
     display: flex;
@@ -188,6 +187,9 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: rgb(255, 255, 255, 0.8);
+}
+.headerUserName {
+    
 }
 
 /*게시판 영역*/
@@ -474,11 +476,11 @@ body {
 }
 .writePwd {
     border: thin solid #c0c0c0;
-    margin-left: auto;
     outline: none;
 }
 .sendPost {
     display: flex;
+    margin-left: auto;
     border: none;
     border-radius: 3px;
     background-color: #0fdf54;

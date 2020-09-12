@@ -38,7 +38,7 @@ if (!isset($_SESSION['userid'])) {
                 <div class="postTop">
                     <?php
                     echo "<a class='writeName'>From : {$_SESSION['userName']}
-                    <input type='password' name='password' class='writePwd' value='0000'>
+                    
                     <input type='submit' class='sendPost' value='POST'>
                     </a>"
                     ?>

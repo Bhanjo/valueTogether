@@ -1,6 +1,6 @@
 <?php
 include 'db_info.php';
-
+session_start();
 // //세션에 userid가 없으면 로그인페이지로 바로 이동
 // if(!isset($_SESSION['userid'])) {
 //   echo "로그인 후 이용해주세요!";

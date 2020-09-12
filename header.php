@@ -4,15 +4,27 @@ include 'db_info.php';
 ?>
 <!DOCTYPE html>
 <html>
-<head><link rel="stylesheet" href="styles.css?after"></head>
+
+<head>
+    <link rel="stylesheet" href="styles.css?after">
+</head>
 <div class="menu">
     <input type="checkbox" id="toggle">
     <label for="toggle" class="btn">&equiv;</label>
     <label for="toggle" class="closer"></label>
 
     <div class="menuContainer">
-    <img src="img/logo128.png" class="brandLogo" onclick="myHome()">
-    <form action="logout.php" class="logoutContainer"><button type="submit" name="submit" id="logoutBox"><img src="img/logout.jpg" class="logoutBtn"></button></form>
+        <img src="img/logo128.png" class="brandLogo" onclick="myHome()">
+        <form action="logout.php" class="logoutContainer">
+            <a><?php
+                if($_SESSION) {
+                    echo $_SESSION['userName'];
+                } else {
+                    echo "로그인이 필요합니다.";
+                }
+                ?></a>
+            <button type="submit" name="submit" id="logoutBox"><img src="img/logout.jpg" class="logoutBtn"></button>
+        </form>
     </div>
 
     <div class="offcanvas">
@@ -27,9 +39,9 @@ include 'db_info.php';
             <li>
                 <a href="recruitPage.php">그룹 모집</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="group.html">나의 그룹</a>
-            </li>
+            </li> -->
             <li>
                 <a href="calendar.php">일정표</a>
             </li>

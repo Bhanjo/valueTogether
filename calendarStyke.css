@@ -14,11 +14,11 @@ html, body{
     border: 4px solid rgba(161, 161, 161, 0.5); 
     border-radius: 20px;
     overflow: hidden;
-    background: #ddaf35;
+    background:#e2e2e2;
   }
   .content-left{
-    background: #0b0809;
-    color:#ddaf35;
+    background: #00851f;
+    color:#ececec;
     float: left;
     width: 100%;
     padding: 30px;
@@ -32,9 +32,17 @@ html, body{
     font-weight: bold;
   }
   .main-date{
-    font-size: 120px;
+    display: inline-flexbox;
+    font-size: 50px;
     font-weight: bold;
     margin: 20px 0;
+  }
+  .main-year {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .yearSend, .monthSend, .dateSend {
+    display: none;
   }
   .todo-wrap{
     padding: 0 0 0 40px;
@@ -48,8 +56,8 @@ html, body{
     width: 50%;
     margin-right: 20px;
     height: auto; 
-    background: #0b0809;
-    color: #ddaf35;
+    background: #00851f;
+    color:#ececec;
     line-height : normal;
     padding: .8em .5em 0 0; 
     font-family: inherit;
@@ -64,18 +72,26 @@ html, body{
   .input-data{
     cursor: pointer;
     font-size: 10px;
+    font-weight: bold;
     padding: 10px;
     margin: 10px 0 10px 0;
-    background: #ddaf35;
+    background: #00851f;
     border: none;
-    color: #0b0809;
+    color:#ececec;
     border-radius: 10px;
   }
   .input-data:hover{
     background: #ffffff;
     color: #0b0809;
   }
-  .input-list > div{
+  .input-list {
+    margin-bottom: 10px;
+  }
+  .input-list-box {
+    height: 8rem;
+    overflow-y: scroll;
+  }
+  /*.input-list > div{
     font-size: 10px;
     width: 60%;
     float: left;
@@ -84,6 +100,17 @@ html, body{
   .input-list > .checked{
     color: #FFFFFF;
     text-decoration:line-through
+  }*/
+  .listDel {
+    display: inline;
+    color:#d4d4d4;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 10px;
+    background: #00851f;;
+    border: none;
+    border-radius: 10px;
   }
   .del-data{
     display: block;
@@ -120,6 +147,9 @@ html, body{
     border-radius: 50%;
     color: #ffffff;
   }
+  .calendar-body td :hover {
+    cursor: pointer;
+  }
   
   @media(min-width: 850px){
     .main{
@@ -137,11 +167,13 @@ html, body{
       border: 4px solid rgba(161, 161, 161, 0.5); 
       border-radius: 20px;
       overflow: hidden;
-      background: #ddaf35;
+      background:#e2e2e2;
     }
     .content-left{
-      background: #0b0809;
-      color:#ddaf35;
+      /* background: #0b0809; */
+      background: #00851f;
+      /* color:#ddaf35; */
+      color:#ececec;
       float: left;
       width: 360px;
       height: 500px;
@@ -156,9 +188,13 @@ html, body{
       font-weight: bold;
     }
     .main-date{
-      font-size: 120px;
+      font-size: 50px;
       font-weight: bold;
       margin: 20px 0;
+    }
+    .main-year {
+      font-size: 25px;
+      font-weight: bold;
     }
     .todo-wrap{
       padding: 0 0 0 40px;
@@ -171,8 +207,8 @@ html, body{
     .input-box{
       width: 70%;
       height: auto; 
-      background: #0b0809;
-      color: #ddaf35;
+      background: #00851f;
+      color:#ececec;
       line-height : normal;
       padding: .8em .5em 0 0; 
       font-family: inherit;
@@ -189,9 +225,10 @@ html, body{
       font-size: 10px;
       padding: 10px;
       margin: 20px 0 30px 0;
-      background: #ddaf35;
+      background: #00851f;
+      color:#ececec;
+      font-weight: bold;
       border: none;
-      color: #0b0809;
       border-radius: 10px;
     }
     .input-data:hover{
