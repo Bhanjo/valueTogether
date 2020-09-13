@@ -293,6 +293,11 @@ body {
     max-height: 150px;
     min-height: 150px;
 }
+.searchTitle {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
 
 /*
 로그인페이지 스타일

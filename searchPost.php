@@ -1,11 +1,11 @@
-<!--그룹모집 게시판-->
+<!--검색결과 게시판-->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css?after">
-    <title>가치해요</title>
+    <title>가치해요_검색결과</title>
 </head>
 
 <body>
@@ -13,6 +13,9 @@
     include 'db_info.php';
     include 'nowWritePage.php';
     // session_start();
+
+    // $catagory = $_GET['catago'];
+    $searchText = $_GET['search'];
     ?>
 
     <div class="frame">
@@ -23,18 +26,25 @@
 
         <div class="mainBox">
             <div class="searchBox">
-                <form action="searchPost.php" method="get">
+            <h1 class="searchTitle"><?php echo "'{$searchText}'"?>의 검색결과</h1>
+            <form action="searchPost.php" method="get">
                 <input type="text" name="search" placeholder="검색키워드를 입력하세요" class="searchInput" />
-                </form>
-                
+            </form>
                 <div class="writePost"><a href="write.php">글쓰기</a></div>
             </div>
+
+            <?php
+            //concat으로 묶고 regexp로 묶어놓은걸 검색
+            $sql = "SELECT*FROM board WHERE CONCAT(writer, Title, content) REGEXP '$searchText'";
+            // $sql = "SELECT*FROM board WHERE Title LIKE '%$searchText%'";
+            $sqlExecute = $mysqli->query($sql);
+            ?>
 
             <div class="postList">
                 <ul>
                     <!-- DB전체 게시물을 가져와 출력 -->
                     <?php
-                    while ($row = $result->fetch_assoc()) {
+                    while ($row = $sqlExecute->fetch_assoc()) {
                     ?>
                         <li class="postInner">
                             <ul class="postHead">
@@ -45,7 +55,7 @@
                                     <h3><?php echo $row['Title'] ?></h3>
                                 </li>
                                 <li class="postDelete">
-                                    <a class="deleteBtn" href="deletePost.php?no=<?=$row['index']?>" role="button"><img src="img/trash24.png"></a>
+                                    <a class="deleteBtn" href="deletePost.php?no=<?= $row['index'] ?>" role="button"><img src="img/trash24.png"></a>
                                 </li>
                             </ul>
 
@@ -61,7 +71,8 @@
                             </ul>
                             <p class="postContent"><?php echo $row['content'] ?></p>
 
-                            <p><?php //echo $row['View_count']?></p>
+                            <p><?php //echo $row['View_count']
+                                ?></p>
                         </li>
                     <?php
                     };
