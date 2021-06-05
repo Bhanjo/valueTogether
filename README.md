@@ -3,3 +3,5 @@
 
 PHP를 이용한 풀스텍 개인 프로젝트입니다.
 로그인과 회원가입, 게시물 작성 등을 구현했습니다.
+
+사용 기술 : PHP, MySQL, JavaScript, HTML, CSS
